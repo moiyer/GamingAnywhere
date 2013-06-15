@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0046)http://gaminganywhere.org/doc/quick_start.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+body {
+	background: #ddd url('img/body.png') repeat scroll top left;
+	margin:0;
+	padding:0;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+	color: #666;
+}
+
+
+* {
+	margin:0;
+	padding:0;
+}
+
+/** element defaults **/
+table {
+	width: 100%;
+	text-align: left;
+}
+
+th, td {
+	padding: 10px 10px;
+}
+
+th {
+	color: #fff;
+	background: #FF6633 none repeat-x scroll left top;
+	border-bottom: 2px solid #FF4000;
+}
+
+td {
+	border-bottom: 1px solid #ccc;
+}
+
+code, blockquote {
+	display: block;
+	border-left: 5px solid #222;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+code {
+	background-color: #222;
+	color:#ccc;
+	border: none;
+}
+blockquote {
+	border-left: 5px solid #222;
+}
+
+blockquote p {
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin: 0;
+	color: #333;
+	height: 1%;
+}
+
+p {
+	line-height: 1.9em;
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+
+a {
+	color: #FF6633;
+}
+
+a:hover {
+	color: #FF4000;
+}
+
+a:focus {
+	outline: none;
+}
+
+fieldset {
+	display: block;
+	border: none;
+	border-top: 1px solid #ccc;
+}
+
+fieldset legend {
+	font-weight: bold;
+	font-size: 13px;
+	padding-right: 10px;
+	color: #333;
+}
+
+fieldset form {
+	padding-top: 15px;
+}
+
+fieldset p label {
+	float: left;
+	width: 150px;
+}
+
+form input, form select, form textarea {
+	padding: 5px;
+	color: #333333;
+	border: 1px solid #ddd;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	background-color:#fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+form input.formbutton {
+	border: none;
+	background: #FF6633 none repeat-x scroll left top;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 6px 10px;
+	font-size: 12px;
+	font-family: Tahoma, Geneva, sans-serif;
+	letter-spacing: 1px;
+	width: auto;
+	overflow: visible;
+}
+
+form.searchform p {
+	margin: 5px 0;
+}
+
+
+span.required {
+	color: #ff0000;
+}
+
+h1 {
+	color: #000;
+	font-size: 35px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 27px;
+	letter-spacing: 0px;
+	font-weight: normal;
+	padding: 0 0 5px;
+	margin: 0;
+}
+
+h3 {
+	color: #FF4000;
+	font-size: 24px;
+	font-weight: normal;
+	margin-bottom: 10px;
+	letter-spacing: -1px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+	padding-bottom: 10px;
+	font-size: 15px;
+	color: #FF794D;
+}
+
+h5 {
+	padding-bottom: 10px;
+	font-size: 13px;
+	color: #ccc;
+}
+
+ul, ol {
+	margin: 0 0 35px 35px;
+}
+
+li {
+	padding-bottom: 5px;
+}
+
+li ol, li ul {
+	font-size: 1.0em;
+	margin-bottom: 0;
+	padding-top: 5px;
+}
+
+
+#container {
+	width: 800px;
+	margin: 0 auto;
+	padding: 10px 10px 30px;
+	background-color: #fff;
+}
+
+#header {
+	padding: 30px 15px;
+	margin: 0 auto;
+}
+
+#header h1 a {
+	color: #444;
+	font-size: 50px;
+	font-weight: normal;
+	text-decoration: none;
+	letter-spacing: -3px;
+	float: left;
+	border-bottom: 2px solid #FF6633;
+}
+
+#header h2 {
+	color: #999;
+	float: left;
+	font-size: 13px;
+	margin-left: 12px;
+	margin-top: 24px;
+	padding-left: 4px;
+	letter-spacing: 0;
+}
+
+#nav {
+	height: 33px;
+	width: 800px;
+	background-color: #cfcfcf;
+}
+
+#nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 45px;
+}
+
+#nav ul li {
+	float: left;
+	display: block;
+	padding: 0;
+}
+
+#nav ul li a:hover, #nav ul li.selected {
+	background-color:#FF6633;
+}
+
+#nav ul li a {
+	color: #fff;
+	display: block;
+	border-right: 1px solid #fff;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+
+#nav ul li.start a {
+	border-left: none;
+}
+
+#nav ul li.end a {
+	border-right: none;
+}
+
+#nav ul li a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#body {
+	background: none;
+	margin:0 auto;
+	padding: 30px 12px 0;
+	width: 776px;
+}
+
+#content {
+	float: left;
+	width: 635px;
+	#text-align: justify;
+}
+
+.sidebar {
+	width: 200px;
+	padding: 10px 0 0;
+	float: right;
+}
+
+.sidebar h3 {
+	color: #333;
+	font-size: 22px;
+}
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sidebar ul li {
+	margin-bottom: 20px;
+	line-height: 1.9em;
+}
+
+.sidebar li ul {
+}
+
+.sidebar li ul li {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	border-top: none;
+	padding: 6px 2px;
+	margin: 0;
+	line-height: 1.5em;
+	font-size: 13px;
+	border: none;
+}
+
+.sidebar li ul li a {
+	font-weight: normal;
+	color: #222;
+}
+
+.sidebar li ul li a:hover {
+	color: #FF6633;
+}
+
+.sidebar li ul.blocklist li {
+	padding: 0;
+	display: inline;
+}
+
+.sidebar li ul.blocklist li a {
+	background-color: #EAEAEA;
+	display: block;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin-bottom: 1px;
+	padding: 7px 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.sidebar li ul.blocklist li a:hover {
+	background-color: #FF6633;
+	color: #fff;
+}
+
+
+.clear {
+	clear: both;
+}
+
+#footer {
+	margin:0 auto 0;
+	border-top: 10px solid #FF531A;
+	width: 800px;
+}
+
+#footer p {
+	text-align: left;
+	color: #ccc;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+#footer p a {
+	color: #ccc;
+	font-weight: bold;
+}
+
+.footer-content {
+	padding: 20px 12px 30px;
+	background: #f0f0f0;
+	border-top: 10px solid #FF6633;
+}
+
+#footer .footer-content ul {
+	width: 238px;
+	list-style: none;
+	margin: 0 30px 0 0;
+	padding: 0;
+	float: left;
+}
+
+#footer .footer-content li {
+	border-bottom: 1px dashed #ddd;
+	padding: 7px 5px;
+}
+
+#footer .footer-content li a, #footer .footer-content h4 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#footer .footer-content li a {
+	color: #555;
+	text-decoration: none;
+}
+
+
+#footer .footer-content li a:hover {
+	color: #000;
+}
+
+#footer .footer-content h4 {
+	font-weight: normal;
+	font-size: 17px;
+	color: #777;
+	padding-bottom:0;
+}
+
+#footer .footer-content ul.endfooter {
+	margin-right: 0;
+}
+
+#footer .footer-content span.sitename {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 40px;
+	font-weight: normal;
+	letter-spacing: -2px;
+	color: #aaa;
+	float: left;
+}
+
+#footer .footer-bottom {
+	padding: 10px;
+	text-align: center;
+	background-color: #222;
+}
+
+#footer .footer-bottom p {
+	text-align: center;
+}
+
+#footer .footer-bottom p, #footer .footer-bottom p a {
+	color: #eee;
+}
+
+pre{
+white-space:pre-wrap; /* css-3 */
+white-space:-moz-pre-wrap; /* Mozilla, since 1999 */
+white-space:-pre-wrap; /* Opera 4-6 */
+white-space:-o-pre-wrap; /* Opera 7 */
+word-wrap:break-word; /* Internet Explorer 5.5+ */
+}
+</style>
+
+<title>GamingAnywhere -- An Open Source Cloud Gaming Project</title>
+<link rel="stylesheet" href="./GamingAnywhere -- An Open Source Cloud Gaming Project_files/styles.css" type="text/css">
+<!--
+sworm, a free CSS web template by spyka Webmaster (www.spyka.net)
+
+Download: http://www.spyka.net/web-templates/sworm/
+
+License: Creative Commons Attribution
+//-->
+</head>
+<body>
+
+
+<div id="container">
+    <div id="body">
+  		<div id="content">
+  		
+	     
+
+<h2>Quick Start Guide</h2><br>
+
+<h3>DIRECTORY STRUCTURE</h3>
+
+<table>
+<tbody><tr><td>bin/</td>
+  	<td>Place to install all runtime required files, including executables,
+	shared objects, modules, fonts, and configurations.</td></tr>
+	
+<tr><td>ga/</td>
+	<td>Source codes for GamingAnywhere core, modules, servers, and client.</td></tr>
+
+<tr><td>deps.posix/</td>
+	<td>Dependencies for POSIX platforms, including libraries and headers
+	(by default empty, files are built from sources in 'deps.src').</td></tr>
+
+<tr><td>deps.win32/</td>
+	<td>Dependencies for Win32 platform, including libraries and headers
+	(by default empty, files are installed from packages in 'deps.pkgs.win32').</td></tr>
+
+<tr><td>deps.src/</td>
+	<td>Source files of dependencies. You will need these files to build
+	dependencies, which is mandatory for POSIX-like platforms (Linux and Mac OS X).</td></tr>
+
+<tr><td>deps.pkgs.win32/</td>
+	<td>Pre-built dependencies for Win32 platform. You can install all the
+	dependencies for Win32 by running the "install.cmd" command in this
+	directory (by default installed into 'deps.win32' directory).</td></tr>
+</tbody></table>
+	
+<div>&nbsp;</div><div>&nbsp;</div>
+<h3> HOW TO BUILD on supported POSIX platforms (Linux and Mac OS X)</h3>
+
+<h4>Prerequisites:</h4>
+	- GNU C++ compiler.<br>
+	- pkg-config.<br>
+	- libX11, libXext, libXtst, libfreetype6, libasound2 (both binaries and development files)<br><p></p>
+
+<h4>Steps:</h4>
+<ol><li>
+  Edit the 'env-setup' script to ensure that GADEPS points to a
+     correct directory. It should be an absolute path to
+     gaminganywhere/deps.posix directory.</li>
+     
+  <li>Merge environment variables from 'env-setup' by using '.' or 'source'
+     command.</li>
+     
+  <li>Build dependencies by running 'make' in the 'deps.src' directory.</li>
+  
+  <li>Build GA by running 'make all' command in the 'ga' directory.</li>
+  
+  <li>Install GA by running 'make install' command in the 'ga' directory.
+     All the generated files will be installed into 'bin' directory.</li>
+</ol>     
+
+
+<h3>HOW TO BUILD on Win32 platform</h3>
+
+<h4>Prerequisites:</h4>
+	- Visual Studio (C++) 2010
+   	  (we did not test it with other versions).<br>
+	- DirectX SDK.<br>
+	- Microsoft SDK (may be installed with VS 2010).<br><p></p>
+
+<h4>Steps:</h4>
+<ol>
+  <li> Install dependencies by running 'install.cmd' in 'deps.pkgs.win32'
+     directory.</li>
+     
+  <li> Install DirectX SDK into 'C:\Microsoft DirectX SDK'.
+     If you install in other places, modify the SDK paths used in
+  	ga/module/vsource-desktop/NMakefile.d3d, and
+  	ga/server/event-driven/NMakefile.</li>
+  	
+  <li>Open Visual C++ command line prompt</li>
+  
+  <li>Build GA by running 'nmake /f NMakefile all' command in the 'ga' directory.</li>
+  
+  <li>Install GA by running 'nmake /f NMakefile install' command in the 'ga'
+     directory. All the generated files will be installed into 'bin' directory.</li>
+</ol>     
+
+
+
+<h3>RUN GA SERVER and CLIENT</h3>
+
+<h4>Prerequisites:</h4>
+<ul>
+  <li>On Linux, you have to add 'deps.posix/lib' into system-wide ld.so search
+    path. In addition, you have to modify
+    'bin/config/common/server-common.conf' and at least ensure that 'display'
+    is set to an accessible X-Window desktop with XTEST extension enabled.
+    The X-Window desktop can be a VNC or Xvfb desktop.</li>
+  <li>On Windows, you have to place 'deps.win32/bin/*.dll' into system-wide DLL
+    search path, or into the same directory of GA's executables,
+    e.g., the 'bin' directory.</li>
+</ul>    
+
+  <h4>Run GA server in periodic (desktop capturing) mode</h4>
+  <pre>     $ ga-server-periodic {config}
+     e.g., $ ga-server config/server.x264+mp3.conf</pre><br>
+
+     The <i>ga-server-periodic</i> will stream the entire desktop to a client. If you plan to
+     streaming only a (game) window, you can add the options:<br><br>
+     1) <b>find-window-name</b> = [window name], or<br>
+     2) <b>find-window-class</b> = [window class]<br><br>
+     into the configuration file. The <i>ga-server-periodic</i> will attempt to find the
+     specified window, move the window to top-left corner of the desktop, and
+     capture only the client area of the specified window.<br><p>
+
+  </p><h4> Run GA server in event-driven (game hooking) mode</h4>
+  <pre>     $ ga-server-event-driven {config}
+     e.g., $ ga-server-event-driven config/d3dex.conf</pre><br>
+
+     The <i>ga-server-event-driven</i> will load the (game) application specified in the
+     configuration file. The application is specified by using the
+     "game-dir" (optional) and the "game-exe" (mandatory) options.
+     Therefore, a game should have its own dedicated configuration file.<p></p>
+
+  <h4>Run GA client</h4>
+<pre>     $ ga-client {config} rtsp://server-address:server-port/desktop
+     e.g., $ ga-client config/client.x264+mp3.conf rtsp://192.168.1.1:8554/desktop</pre><p></p>
+
+     We have two default configurations for the client, both running with H.264
+     decoder and mp3 decoder:<br><br>
+     a) <b>client.abs.conf</b> - work with absolute position mouse pointer.<br>
+     b) <b>client.rel.conf</b> - work with relative position mouse pointer.<br><br>
+
+     Please note that you should prevent your firewall from filtering network
+     ports used by GA. By default, GA uses TCP port 8554 for RTSP and
+     TCP/UDP port 8555 for controller.
+
+<div>&nbsp;</div>            
+       <div>&nbsp;</div><div>&nbsp;</div>            
+      </div> <!-- content -->
+        
+      <!--<div class="sidebar">
+          <ul>	
+              <li>
+                  <h3>About</h3>
+                  <ul>
+                      <li>
+                      	<p style="margin: 0;">TBA</p>
+                      </li>
+                  </ul>
+              </li>
+              
+              </li>
+              
+              <li>
+                  <h3>Sponsors</h3>
+                  <ul>
+                      <li><a href="http://www.themeforest.net/?ref=spykawg" title="premium templates"><strong>ThemeForest</strong></a> - premium HTML templates, WordPress themes and PHP scripts</li>
+                      <li><a href="http://www.dreamhost.com/r.cgi?259541" title="web hosting"><strong>Web hosting</strong></a> - 50 dollars off when you use promocode <strong>awesome50</strong></li>
+                      <li><a href="http://www.4templates.com/?aff=spykawg" title="4templates"><strong>4templates</strong></a> - brilliant premium templates</li>
+                  </ul>
+              </li>
+              
+          </ul> 
+      </div> --> <!-- of sidebar --> 
+      
+  	<div class="clear"></div>
+  </div>  <!-- of body -->
+    
+</div>
+
+
+</body></html>
