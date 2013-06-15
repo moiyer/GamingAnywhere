@@ -4670,8 +4670,8 @@ __XCAP_AVCODEC_H__	core\ga-avcodec.h	20;"	d
 FindWindowX	core\ga-common.cpp	/^FindWindowX(Display *dpy, Window top, const char *name) {$/;"	f
 GetClientRectX	core\ga-common.cpp	/^GetClientRectX(Display *dpy, int screen, Window window, struct gaRect *rect) {$/;"	f
 NIPQUAD	core\ga-common.cpp	47;"	d	file:
-SWAP	core\ga-common.cpp	233;"	d	file:
-SWAP	core\ga-common.cpp	238;"	d	file:
+SWAP	core\ga-common.cpp	244;"	d	file:
+SWAP	core\ga-common.cpp	249;"	d	file:
 ga_atoi	core\ga-common.cpp	/^ga_atoi(const char *str) {$/;"	f
 ga_backtrace	core\ga-common.cpp	/^ga_backtrace() {$/;"	f
 ga_closelog	core\ga-common.cpp	/^ga_closelog() {$/;"	f
