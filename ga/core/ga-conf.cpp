@@ -35,8 +35,9 @@
 
 using namespace std;
 
-//
-
+//保存config文件里的config信息
+//可以借鉴这种方式，gaConfVar里面还有map和string,重载了[]
+//使用static比较好，使ga_vars作用域只在这个编译单元内
 static map<string,gaConfVar> ga_vars;
 static map<string,gaConfVar>::iterator ga_vmi = ga_vars.begin();
 

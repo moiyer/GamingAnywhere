@@ -154,23 +154,33 @@ ga_gettid() {
 #endif
 }
 
+//调用Windows Sockets函数前的初始化
 static int
 winsock_init() {
 #ifdef WIN32
 	WSADATA wd;
-	if(WSAStartup(MAKEWORD(2,2), &wd) != 0)
+	if(WSAStartup(MAKEWORD(2,2), &wd) != 0)//本函数必须是应用程序或DLL调用的第一个Windows Sockets函数.
+		//它允许应用程序或DLL指明Windows Sockets API的版本号及获得特定Windows Sockets实现的细节
 		return -1;
 #endif
 	return 0;
 }
 
+
+//进行初始化工作:
+//1、windows sockets调用前的初始化
+//2、注册av,avcodec,avformat库
+//3、服务器端加载config文件，或者客户端验证url
 int
 ga_init(const char *config, const char *url) {
 	srand(time(0));
 	winsock_init();
+
+	//某个库里面的初始化函数，看不到代码
 	av_register_all();
 	avcodec_register_all();
 	avformat_network_init();
+	
 	if(config != NULL) {
 		if(ga_conf_load(config) < 0) {
 			ga_error("GA: cannot load configuration file '%s'\n", config);
@@ -191,6 +201,7 @@ ga_deinit() {
 	return;
 }
 
+//从config结构里找出key="logfile"对应的value，并打开
 void
 ga_openlog() {
 	char fn[1024];
