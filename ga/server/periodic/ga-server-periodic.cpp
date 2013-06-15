@@ -116,7 +116,7 @@ int
 main(int argc, char *argv[]) {
 	int notRunning = 0;
 #ifdef WIN32
-	if(CoInitializeEx(NULL, COINIT_MULTITHREADED) < 0) {
+	if(CoInitializeEx(NULL, COINIT_MULTITHREADED) < 0) {// Windows提供的API函数，为当前线程初始化COM库并设置并发模式 
 		fprintf(stderr, "cannot initialize COM.\n");
 		return -1;
 	}
