@@ -123,6 +123,7 @@ rtspconf_load_codec(const char *key, const char *value,
 	return 0;
 }
 
+//从之前的config结构中读取rtsp相关的配置到conf中
 int
 rtspconf_parse(struct RTSPConf *conf) {
 	char *ptr, buf[1024];

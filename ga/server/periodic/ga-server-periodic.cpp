@@ -126,16 +126,16 @@ main(int argc, char *argv[]) {
 		fprintf(stderr, "usage: %s config-file\n", argv[0]);
 		return -1;
 	}
-	//
+	//读取文件中的config
 	if(ga_init(argv[1], NULL) < 0)	{ return -1; }
-	//
+	//从config结构里找出key="logfile"对应的value，并打开
 	ga_openlog();
-	//
+	//从之前的config中读取rtsp相关config
 	if(rtspconf_parse(rtspconf_global()) < 0)
 					{ return -1; }
 	//
 	prect = NULL;
-	//
+	//获取config中配置的window位置
 	if(ga_crop_window(&rect, &prect) < 0) {
 		return -1;
 	} else if(prect == NULL) {

@@ -34,6 +34,7 @@
 #include "server.h"
 #include "rtspserver.h"
 
+//监听连接的主函数，对于每一个连接启动一个新的线程，允许rtspserver函数
 void *
 rtspserver_main(void *arg) {
 #ifdef WIN32

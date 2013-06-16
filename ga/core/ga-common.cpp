@@ -265,6 +265,7 @@ ga_fillrect(struct gaRect *rect, int left, int top, int right, int bottom) {
 	return rect;
 }
 
+//找到config中配置的window在屏幕中的位置
 #ifdef WIN32
 int
 ga_crop_window(struct gaRect *rect, struct gaRect **prect) {
@@ -307,7 +308,7 @@ ga_crop_window(struct gaRect *rect, struct gaRect **prect) {
 		pclass ? pclass : "",
 		pname ? " name=" : "",
 		pname ? pname : "");
-	//
+	//设置子窗口置顶
 	if(SetWindowPos(hWnd, HWND_TOP, 0, 0, 0, 0, SWP_NOSIZE|SWP_SHOWWINDOW) == 0) {
 		ga_error("SetWindowPos failed.\n");
 		return -1;
